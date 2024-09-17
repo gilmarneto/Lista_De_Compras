@@ -1,0 +1,39 @@
+{% extends "template.html" %}
+{% block conteudo %}
+    <h1 class="d-flex justify-content-center">Lista de Compras</h1>
+    <!-- Formulário para adicionar de produtos -->
+    <form class="d-flex d-flex justify-content-center" action="" method="post">
+        <div class="row">
+            <div class="col-auto">
+                <input type="text" class="form-control" name="produto" placeholder="Produto">
+            </div>
+            <div class="col-auto">
+                <input type="number" class="form-control" name="quantidade" placeholder="Quantidade">
+            </div>
+            <div class="col-auto">
+                <button type="submit" class="btn btn-success">Adiconar</button>
+            </div>
+        </div>
+    </form>
+    <!-- Tabela de produtos -->
+    <table class="table mt-4 margin-bottom-4">
+        <thead class="thead-dark">
+            <tr class="d-flex d-flex justify-content-center">
+                <th class="col-2">Produto</th>
+                <th class="col-1">Quantidade</th>
+                <th class="col-auto">Editar</th>
+                <th class="col-auto">Excluir</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for listar_produtos in produtos %}
+            <tr class="d-flex d-flex justify-content-center">
+                <td class="col-2"></td>
+                <td class="col-1"></td>
+                <td class="col-auto"><a href=""><button type="button" class="btn btn-primary">✎</button></a></td>
+                <td class="col-auto"><button type="button" class="btn btn-danger">╳</button></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

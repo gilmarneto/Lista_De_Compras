@@ -1,0 +1,32 @@
+Data: 16/09/24
+
+Projeto lista, passo a passo
+
+> estudar lista = OK;
+
+> lista com orientação a objetos = OK;
+
+> adicionar = ok;
+
+> listar = ok;
+
+> editar = ok;
+
+> excluir = ok;
+
+> criar projeto no Flask = ok*;
+
+> criar tela index com formulario e tabela = ok;
+
+> estruturar Bootstrap = X; // Neste rascunho não iremos usar Bootstrap
+
+> criar os seguintes métodos:
+	- valor: onde iremos receber o valor vindo do formulario = ok;
+	- inserir: iremos pegar o valor recebido e adicionar à lista = ok;
+	- exibir: será responsável por exibir os valores da lista na tabela = ok;
+	- alterar: onde iremos pegar o valor selecionado para editar e altarar seu valor = ok;
+	- excluir: quando selecionarmos o botão de excluir, ele irá excluir o valor da lista = ok;
+
+> Primeira etapa finalizada em: 17/09/2024
+
+>
