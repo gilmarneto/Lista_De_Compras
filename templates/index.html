@@ -1,37 +1,37 @@
 {% extends "template.html" %}
 {% block conteudo %}
-    <h1 class="d-flex justify-content-center">Lista de Compras</h1>
+    <h1>Lista de Compras</h1>
     <!-- Formulário para adicionar de produtos -->
-    <form class="d-flex d-flex justify-content-center" action="" method="post">
+    <form action="/adicionar" method="post">
         <div class="row">
             <div class="col-auto">
-                <input type="text" class="form-control" name="produto" placeholder="Produto">
+                <input type="text" class="form-control" name="produto" value="" placeholder="Produto">
             </div>
             <div class="col-auto">
-                <input type="number" class="form-control" name="quantidade" placeholder="Quantidade">
+                <input type="number" class="form-control" name="quantidade" value="{{ a_quantidade }}" placeholder="Quantidade">
             </div>
             <div class="col-auto">
-                <button type="submit" class="btn btn-success">Adiconar</button>
+                <button type="submit" class="btn btn-success">Adicionar</button>
             </div>
         </div>
     </form>
     <!-- Tabela de produtos -->
-    <table class="table mt-4 margin-bottom-4">
+    <table>
         <thead class="thead-dark">
-            <tr class="d-flex d-flex justify-content-center">
-                <th class="col-2">Produto</th>
-                <th class="col-1">Quantidade</th>
-                <th class="col-auto">Editar</th>
-                <th class="col-auto">Excluir</th>
+            <tr>
+                <th>Produto</th>
+                <th>Quantidade</th>
+                <th>Editar</th>
+                <th>Excluir</th>
             </tr>
         </thead>
         <tbody>
-            {% for listar_produtos in produtos %}
-            <tr class="d-flex d-flex justify-content-center">
-                <td class="col-2"></td>
-                <td class="col-1"></td>
-                <td class="col-auto"><a href=""><button type="button" class="btn btn-primary">✎</button></a></td>
-                <td class="col-auto"><button type="button" class="btn btn-danger">╳</button></td>
+            {% for lp in produtos %}
+            <tr>
+                <td>{{ lp.produto }}</td>
+                <td>{{ lp.quantidade }}</td>
+                <td><a href="/btn_editar?id={{ listar }}"><button type="button" class="btn btn-primary">✎</button></a></td>
+                <td><button type="button" class="btn btn-danger">╳</button></td>
             </tr>
             {% endfor %}
         </tbody>
