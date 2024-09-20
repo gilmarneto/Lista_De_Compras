@@ -5,18 +5,18 @@ from class_tela import Tela
 
 class ListaProdutos(Produto, Tela):
 
-    lista = []
-
     def __init__(self):
         super().__init__()
+        self.lista = {}
 
     # MÉTODO PARA ADICIONAR PRODUTOS
     def adicionar_produto(self):
-        pass
+        self.lista = {self.produto:self.quantidade}
 
     # MÉTODO PARA EXIBIR A LISTA
-    @classmethod
-    def exibir_lista(cls):
-        pass
+    def exibir_lista(self):
+        for p,q in self.lista.items():
+            print(p, " --- ", q)
+        return self.lista
 
 

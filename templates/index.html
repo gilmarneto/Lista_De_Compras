@@ -26,10 +26,10 @@
             </tr>
         </thead>
         <tbody>
-            {% for lp in produtos %}
+            {% for produto, quantidade in produtos.items() %}
             <tr>
-                <td>{{ lp.produto }}</td>
-                <td>{{ lp.quantidade }}</td>
+                <td>{{ produto }}</td>
+                <td>{{ quantidade }}</td>
                 <td><a href="/btn_editar?id={{ listar }}"><button type="button" class="btn btn-primary">✎</button></a></td>
                 <td><button type="button" class="btn btn-danger">╳</button></td>
             </tr>
