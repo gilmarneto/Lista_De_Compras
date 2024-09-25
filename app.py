@@ -11,14 +11,21 @@ app = Flask(__name__)
 # rota principal, responsável pela tela index
 @app.route('/')
 def index():
-    return render_template('index.html', titulo='Lista de Compras', produtos=lp.exibir_lista())
+    return render_template('index.html', titulo='Lista de Compras', componente=lp.componentes_tela(), lista=lp.exibir_lista())
 
-# rota para adiconar produtos na lista
+# rota adiconar produto na lista
 @app.route('/adicionar', methods=['POST',])
 def adicionar():
     lp.produto = request.form['produto']
     lp.quantidade = request.form['quantidade']
     lp.adicionar_produto()
+    return redirect(url_for('index'))
+
+# rota editar produto
+@app.route('/editar')
+def editar():
+    lp.produto_selecionado = request.args.get('produto')
+    lp.editar()
     return redirect(url_for('index'))
 
 # rodar aplicação

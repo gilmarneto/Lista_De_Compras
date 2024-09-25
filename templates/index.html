@@ -8,7 +8,7 @@
                 <input type="text" class="form-control" name="produto" value="" placeholder="Produto">
             </div>
             <div class="col-auto">
-                <input type="number" class="form-control" name="quantidade" value="{{ a_quantidade }}" placeholder="Quantidade">
+                <input type="number" class="form-control" name="quantidade" value="" placeholder="Quantidade">
             </div>
             <div class="col-auto">
                 <button type="submit" class="btn btn-success">Adicionar</button>
@@ -26,11 +26,11 @@
             </tr>
         </thead>
         <tbody>
-            {% for produto, quantidade in produtos.items() %}
+            {% for produto, quantidade in lista.items() %}
             <tr>
                 <td>{{ produto }}</td>
                 <td>{{ quantidade }}</td>
-                <td><a href="/btn_editar?id={{ listar }}"><button type="button" class="btn btn-primary">✎</button></a></td>
+                <td><a href="/editar?produto={{ produto }}"><button type="button" class="btn btn-primary">✎</button></a></td>
                 <td><button type="button" class="btn btn-danger">╳</button></td>
             </tr>
             {% endfor %}
