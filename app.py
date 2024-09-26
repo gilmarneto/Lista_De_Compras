@@ -1,4 +1,5 @@
-# data: 10/09/24
+# data inicial: 10/09/24
+# data final: 25/09/24
 """ vamos desenvolver uma pequena lista de compras, utilizando o flask e bootstrap """
 
 from flask import Flask, render_template, redirect, request, url_for
@@ -26,6 +27,20 @@ def adicionar():
 def editar():
     lp.produto_selecionado = request.args.get('produto')
     lp.editar()
+    return redirect(url_for('index'))
+
+# rota alteração de quantidade do produto
+@app.route('/alterar', methods=['POST',])
+def alterar():
+    lp.quantidade = request.form['quantidade']
+    lp.alterar()
+    return redirect(url_for('index'))
+
+# rota alteração de quantidade do produto
+@app.route('/excluir')
+def excluir():
+    lp.produto_selecionado = request.args.get('produto')
+    lp.excluir()
     return redirect(url_for('index'))
 
 # rodar aplicação

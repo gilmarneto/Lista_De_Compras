@@ -2,16 +2,16 @@
 {% block conteudo %}
     <h1>Lista de Compras</h1>
     <!-- Formulário para adicionar de produtos -->
-    <form action="/adicionar" method="post">
+    <form action="{{ componente.rota_form }}" method="post">
         <div class="row">
             <div class="col-auto">
-                <input type="text" class="form-control" name="produto" value="" placeholder="Produto">
+                <input type="text" class="form-control" name="produto" value="{{ componente.input_produto }}" disabled="" placeholder="Produto">
             </div>
             <div class="col-auto">
-                <input type="number" class="form-control" name="quantidade" value="" placeholder="Quantidade">
+                <input type="number" class="form-control" name="quantidade" value="{{ componente.input_quantidade }}" placeholder="Quantidade">
             </div>
             <div class="col-auto">
-                <button type="submit" class="btn btn-success">Adicionar</button>
+                <button type="submit" class="btn btn-success">{{ componente.btn_form }}</button>
             </div>
         </div>
     </form>
@@ -31,7 +31,7 @@
                 <td>{{ produto }}</td>
                 <td>{{ quantidade }}</td>
                 <td><a href="/editar?produto={{ produto }}"><button type="button" class="btn btn-primary">✎</button></a></td>
-                <td><button type="button" class="btn btn-danger">╳</button></td>
+                <td><a href="/excluir?produto={{ produto }}"><button type="button" class="btn btn-danger">╳</button></a></td>
             </tr>
             {% endfor %}
         </tbody>

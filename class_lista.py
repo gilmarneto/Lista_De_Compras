@@ -22,11 +22,21 @@ class ListaProdutos(Produto, Tela):
         self.rota_form = 'alterar'
         self.btn_form = 'Alterar'
         for prod, qtde in self.lista.items():
-            print(type(prod))
-            print(type(self.produto_selecionado))
             if prod == self.produto_selecionado:
-                print('oi')
-        
+                self.input_produto = prod
+                self.input_quantidade = qtde
+
+    # MÉTODO ALTERAR QUANTIDADE DO PRODUTO 
+    def alterar(self):  
+        self.lista[self.produto_selecionado] = self.quantidade  
+        self.rota_form = 'adicionar'
+        self.btn_form = 'Adicionar'
+        self.input_produto = ''
+        self.input_quantidade = ''       
+
+    # MÉTODO EXCLUIR PRODUTO 
+    def excluir(self):
+        del self.lista[self.produto_selecionado]   
 
 
 
