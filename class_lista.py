@@ -21,6 +21,7 @@ class ListaProdutos(Produto, Tela):
     def editar(self):
         self.rota_form = 'alterar'
         self.btn_form = 'Alterar'
+        self.disabled_componente = 'disabled'
         for prod, qtde in self.lista.items():
             if prod == self.produto_selecionado:
                 self.input_produto = prod
@@ -32,6 +33,7 @@ class ListaProdutos(Produto, Tela):
         self.rota_form = 'adicionar'
         self.btn_form = 'Adicionar'
         self.input_produto = ''
+        self.disabled_componente = ''
         self.input_quantidade = ''       
 
     # MÉTODO EXCLUIR PRODUTO 

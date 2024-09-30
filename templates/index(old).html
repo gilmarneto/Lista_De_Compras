@@ -1,0 +1,39 @@
+{% extends "template.html" %}
+{% block conteudo %}
+    <h1>Lista de Compras</h1>
+    <!-- Formulário para adicionar de produtos -->
+    <form action="{{ componente.rota_form }}" method="post">
+        <div class="row">
+            <div class="col-auto">
+                <input type="text" class="form-control" name="produto" value="{{ componente.input_produto }}" placeholder="Produto">
+            </div>
+            <div class="col-auto">
+                <input type="number" class="form-control" name="quantidade" value="{{ componente.input_quantidade }}" placeholder="Quantidade">
+            </div>
+            <div class="col-auto">
+                <button type="submit" class="btn btn-success">{{ componente.btn_form }}</button>
+            </div>
+        </div>
+    </form>
+    <!-- Tabela de produtos -->
+    <table>
+        <thead class="thead-dark">
+            <tr>
+                <th>Produto</th>
+                <th>Quantidade</th>
+                <th>Editar</th>
+                <th>Excluir</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for produto, quantidade in lista.items() %}
+            <tr>
+                <td>{{ produto }}</td>
+                <td>{{ quantidade }}</td>
+                <td><a href="/editar?produto={{ produto }}"><button type="button" class="btn btn-primary">✎</button></a></td>
+                <td><a href="/excluir?produto={{ produto }}"><button type="button" class="btn btn-danger">╳</button></a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

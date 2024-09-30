@@ -1,0 +1,18 @@
+/* data: 29/09/2024 */
+
+html, body {
+    height: 100%;
+}
+
+.content-main {
+    max-width: 500px;
+    padding: 1rem;
+}
+
+.w-coluna-produto {
+    width: 70%;
+}
+
+.w-coluna-quantidade {
+    width: 30%;
+}
